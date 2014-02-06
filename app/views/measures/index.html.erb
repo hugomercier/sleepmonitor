@@ -1,0 +1,32 @@
+<h1>Listing measures</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Value</th>
+      <th>Time</th>
+      <th>Userid</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @measures.each do |measure| %>
+      <tr>
+        <td><%= measure.value %></td>
+        <td><%= measure.time %></td>
+        <td><%= measure.userID %></td>
+        <td><%= link_to 'Show', measure %></td>
+        <td><%= link_to 'Edit', edit_measure_path(measure) %></td>
+        <td><%= link_to 'Destroy', measure, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Measure', new_measure_path %>
+<a href="../static_pages/home">Back</a>
